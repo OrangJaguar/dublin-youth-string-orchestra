@@ -1,0 +1,111 @@
+{
+  "name": "SiteSettings",
+  "type": "object",
+  "properties": {
+    "banner_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show or hide the countdown banner"
+    },
+    "banner_text": {
+      "type": "string",
+      "default": "NEXT CONCERT: GCCC 2PM",
+      "description": "Main banner text"
+    },
+    "banner_location": {
+      "type": "string",
+      "default": "@ GCCC Room A210-215",
+      "description": "Banner location text"
+    },
+    "countdown_date": {
+      "type": "string",
+      "format": "date-time",
+      "default": "2026-01-29T14:00:00-05:00",
+      "description": "Countdown target date and time"
+    },
+    "applications_open": {
+      "type": "boolean",
+      "default": false,
+      "description": "Applications open or closed"
+    },
+    "application_deadline": {
+      "type": "string",
+      "default": "Fall 2026",
+      "description": "Application deadline text"
+    },
+    "audition_date": {
+      "type": "string",
+      "default": "TBA",
+      "description": "Audition date text"
+    },
+    "audition_date_display": {
+      "type": "string",
+      "default": "Wednesday, May 27",
+      "description": "Human-readable audition date shown on the Audition page"
+    },
+    "audition_time": {
+      "type": "string",
+      "default": "4PM\u20136PM",
+      "description": "Audition time shown on the Audition page"
+    },
+    "audition_location": {
+      "type": "string",
+      "default": "Karrer Middle School Music Wing",
+      "description": "Audition location shown on the Audition page"
+    },
+    "orchestra_application_link": {
+      "type": "string",
+      "default": "#",
+      "description": "Orchestra application form link"
+    },
+    "ra_application_link": {
+      "type": "string",
+      "default": "#",
+      "description": "Rehearsal Assistant application form link"
+    },
+    "remind_code": {
+      "type": "string",
+      "default": "@25DYSO",
+      "description": "Remind code for the current year"
+    },
+    "contact_email": {
+      "type": "string",
+      "default": "info@dyso.org",
+      "description": "Organization contact email"
+    },
+    "orchestra_eligibility": {
+      "type": "string",
+      "default": "\u2022 String players (violin, viola, cello, bass)\n\u2022 Ages 12-18\n\u2022 Intermediate to advanced skill level\n\u2022 Commitment to weekly rehearsals",
+      "description": "Orchestra eligibility requirements"
+    },
+    "orchestra_requirements": {
+      "type": "string",
+      "default": "\u2022 Prepare one solo piece (2-3 minutes)\n\u2022 Sight-reading assessment\n\u2022 Scale demonstration\n\u2022 Brief interview",
+      "description": "Orchestra audition requirements"
+    },
+    "ra_responsibilities": {
+      "type": "string",
+      "default": "\u2022 Assist conductors during rehearsals\n\u2022 Help with music distribution\n\u2022 Support section leaders\n\u2022 Mentor younger musicians",
+      "description": "Rehearsal Assistant responsibilities"
+    }
+  },
+  "required": [],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

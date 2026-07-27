@@ -1,0 +1,60 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "rehearsal",
+        "concert",
+        "break"
+      ],
+      "description": "Type of event"
+    },
+    "title": {
+      "type": "string",
+      "description": "Event title"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Event date (YYYY-MM-DD)"
+    },
+    "time": {
+      "type": "string",
+      "description": "Event time (optional)"
+    },
+    "location": {
+      "type": "string",
+      "description": "Event location (optional)"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "type",
+    "title",
+    "date",
+    "order"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {},
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
