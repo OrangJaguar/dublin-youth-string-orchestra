@@ -29,13 +29,13 @@ export default function Schedule() {
   const nextEvent = events.find(e => {
     const eventDate = new Date(e.date + 'T12:00:00');
     eventDate.setHours(0, 0, 0, 0);
-    return eventDate >= today && e.type !== 'break';
+    return !e.is_tbd && eventDate >= today && e.type !== 'break';
   });
   
   const nextConcert = events.find(e => {
     const eventDate = new Date(e.date + 'T12:00:00');
     eventDate.setHours(0, 0, 0, 0);
-    return e.type === 'concert' && eventDate >= today;
+    return !e.is_tbd && e.type === 'concert' && eventDate >= today;
   });
 
   if (isLoading) {
@@ -53,7 +53,7 @@ export default function Schedule() {
         <ScrollReveal>
           <div className="text-center mb-12">
             <span className="text-[#2e8b57] text-sm tracking-[0.3em] uppercase">
-              2025-2026 Season
+              2026-2027 Season
             </span>
             <h1 className="font-serif text-5xl md:text-6xl text-[#ededed] italic mt-4 mb-6">
               The Timeline
@@ -110,7 +110,7 @@ export default function Schedule() {
               eventDate.setHours(0, 0, 0, 0);
               const today = new Date();
               today.setHours(0, 0, 0, 0);
-              const isPast = eventDate < today;
+              const isPast = !event.is_tbd && eventDate < today;
               
               return (
                 <div key={event.id} id={`event-${event.id}`}>

@@ -76,10 +76,14 @@ export default function Admin() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await base44Client.functions.invoke('verifyAdminPasscode', { passcode });
-    if (res.data?.success) {
-      setIsAuthenticated(true);
-    } else {
+    try {
+      const res = await base44Client.functions.invoke('verifyAdminPasscode', { passcode });
+      if (res.data?.success) {
+        setIsAuthenticated(true);
+      } else {
+        alert('Incorrect passcode');
+      }
+    } catch (err) {
       alert('Incorrect passcode');
     }
   };
@@ -94,6 +98,7 @@ export default function Admin() {
         time: '',
         location: '',
         order: maxOrder + 1,
+        is_tbd: false,
       },
       {
         onError: (error) => {
@@ -105,13 +110,15 @@ export default function Admin() {
   };
 
   const handleSave = (id) => {
-    const dataToSave = { ...editForm };
-    
-    // Clean up the data - remove system fields
-    delete dataToSave.id;
-    delete dataToSave.created_date;
-    delete dataToSave.updated_date;
-    delete dataToSave.created_by;
+    const dataToSave = {
+      type: editForm.type,
+      title: editForm.title,
+      date: editForm.date,
+      time: editForm.time,
+      location: editForm.location,
+      order: editForm.order,
+      is_tbd: editForm.is_tbd,
+    };
     
     updateMutation.mutate(
       { id, data: dataToSave },
@@ -191,13 +198,25 @@ export default function Admin() {
   }
 
   const handleSaveHeader = () => {
-    const dataToSave = { ...headerForm };
-    
-    // Clean up the data - remove id and any undefined fields
-    delete dataToSave.id;
-    delete dataToSave.created_date;
-    delete dataToSave.updated_date;
-    delete dataToSave.created_by;
+    const dataToSave = {
+      banner_enabled: headerForm.banner_enabled,
+      banner_text: headerForm.banner_text,
+      banner_location: headerForm.banner_location,
+      countdown_date: headerForm.countdown_date,
+      applications_open: headerForm.applications_open,
+      application_deadline: headerForm.application_deadline,
+      audition_date: headerForm.audition_date,
+      audition_date_display: headerForm.audition_date_display,
+      audition_time: headerForm.audition_time,
+      audition_location: headerForm.audition_location,
+      orchestra_application_link: headerForm.orchestra_application_link,
+      ra_application_link: headerForm.ra_application_link,
+      remind_code: headerForm.remind_code,
+      contact_email: headerForm.contact_email,
+      orchestra_eligibility: headerForm.orchestra_eligibility,
+      orchestra_requirements: headerForm.orchestra_requirements,
+      ra_responsibilities: headerForm.ra_responsibilities,
+    };
     
     updateSettingsMutation.mutate(dataToSave, {
       onSuccess: () => {
@@ -296,6 +315,7 @@ export default function Admin() {
                                         <SelectItem value="rehearsal">Rehearsal</SelectItem>
                                         <SelectItem value="concert">Concert</SelectItem>
                                         <SelectItem value="break">Break</SelectItem>
+                                        <SelectItem value="trip">Trip</SelectItem>
                                       </SelectContent>
                                     </Select>
                                   ) : (
@@ -319,14 +339,26 @@ export default function Admin() {
                                 {/* Date */}
                                 <div className="w-36">
                                   {editingId === event.id ? (
-                                    <Input
-                                      type="date"
-                                      value={editForm.date}
-                                      onChange={(e) => setEditForm({ ...editForm, date: e.target.value })}
-                                      className="bg-[#0a0a0a] border-[#333] text-[#ededed]"
-                                    />
+                                    <div className="space-y-1">
+                                      <Input
+                                        type="date"
+                                        value={editForm.date}
+                                        disabled={editForm.is_tbd}
+                                        onChange={(e) => setEditForm({ ...editForm, date: e.target.value })}
+                                        className="bg-[#0a0a0a] border-[#333] text-[#ededed]"
+                                      />
+                                      <label className="flex items-center gap-1.5 text-xs text-[#a1a1a1]">
+                                        <input
+                                          type="checkbox"
+                                          checked={editForm.is_tbd || false}
+                                          onChange={(e) => setEditForm({ ...editForm, is_tbd: e.target.checked })}
+                                          className="w-3.5 h-3.5"
+                                        />
+                                        TBD
+                                      </label>
+                                    </div>
                                   ) : (
-                                    <span className="text-[#a1a1a1]">{event.date}</span>
+                                    <span className="text-[#a1a1a1]">{event.is_tbd ? 'TBD' : event.date}</span>
                                   )}
                                 </div>
 
