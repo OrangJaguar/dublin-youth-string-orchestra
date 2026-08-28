@@ -145,17 +145,5 @@ Before coming to Dublin, Mrs. Hanson spent 5 years in Ashland City Schools, wher
 
 In her spare time, Mrs. Hanson enjoys hiking, exercising, and spending time with her family in the Leelanau Peninsula.`,
     image: "https://www.dublinyouthstringorchestra.com/uploads/1/2/8/6/12866982/published/img-7890.jpg?1761511561"
-  },
-  {
-    id: 5,
-    name: "Ms. Abigail Miles",
-    school: "Eversole Run Middle School, 2025-Present",
-    degrees: [
-      "Bachelor of Music Education - Baldwin Wallace University"
-    ],
-    bio: `Ms. Miles is the orchestra director at Eversole Run Middle School in Dublin City Schools. She earned her Bachelor of Music Education degree from Baldwin Wallace University in 2019 and is currently pursuing her Master's degree in Music Education at The Ohio State University. Before joining the Dublin team, Ms. Miles taught 5th–12th grade orchestra in Perrysburg Schools in Perrysburg, Ohio, where her ensembles consistently earned superior ratings at OMEA Large Group contests. Her groups also performed multiple times at the OMEA State Professional Development Conference and the 2024 National Orchestra Festival in Louisville, Kentucky, as part of the ASTA National Convention.
-
-In addition to her work in the classroom, Ms. Miles is an active performer and conductor. She has served as a conductor for the Baldwin Wallace University Middle School Strings Camp, Ohio State University Morning Strings Workshop and actively performs her cello throughout the state of Ohio. Abigail is passionate about providing inclusive, high-quality music education and fostering a lifelong love of music in her students.`,
-    image: "https://www.dublinyouthstringorchestra.com/uploads/1/2/8/6/12866982/published/75b0a960-5099-4540-9519-82d885612086.jpg?1761511603"
   }
 ];
