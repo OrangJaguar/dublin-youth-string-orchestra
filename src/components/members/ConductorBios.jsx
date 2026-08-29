@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { conductors } from './SeatingData';
+import ConductorImage from './ConductorImage';
 import ScrollReveal from '../animations/ScrollReveal';
 
 export default function ConductorBios() {
@@ -12,12 +13,7 @@ export default function ConductorBios() {
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-0">
               {/* Image */}
               <div className="relative overflow-hidden group/img">
-                <motion.img
-                  src={conductor.image}
-                  alt={conductor.name}
-                  className="w-full h-64 lg:h-full object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
-                  whileHover={{ scale: 1.05 }}
-                />
+                <ConductorImage conductor={conductor} />
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <h3 className="font-serif text-2xl text-white italic mb-1">
