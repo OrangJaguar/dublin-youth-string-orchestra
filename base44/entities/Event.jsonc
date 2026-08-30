@@ -7,8 +7,7 @@
       "enum": [
         "rehearsal",
         "concert",
-        "break",
-        "trip"
+        "break"
       ],
       "description": "Type of event"
     },
@@ -32,11 +31,6 @@
     "order": {
       "type": "number",
       "description": "Display order"
-    },
-    "is_tbd": {
-      "type": "boolean",
-      "default": false,
-      "description": "Whether the event date is TBD"
     }
   },
   "required": [
