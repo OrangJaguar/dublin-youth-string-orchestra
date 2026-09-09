@@ -144,6 +144,6 @@ Mr. Hawley enjoys being outdoors, watching the Buckeyes, and spending time with 
 Before coming to Dublin, Mrs. Hanson spent 5 years in Ashland City Schools, where she taught Orchestra to grades 4-12. Mrs. Hanson's ensembles have appeared at the OMEA Professional Development Conference, and her ensembles consistently receive Superior ratings at OMEA Large Group State Orchestra Contest and the Central Ohio String Festival in Upper Arlington. Mrs. Hanson has been a guest clinician for many programs across Ohio.
 
 In her spare time, Mrs. Hanson enjoys hiking, exercising, and spending time with her family in the Leelanau Peninsula.`,
-    image: "https://www.dublinyouthstringorchestra.com/uploads/1/2/8/6/12866982/published/img-7890.jpg?1761511561"
+    image: "https://media.base44.com/images/public/6a67b552b43b987affe58d78/b5fdb50e8_IMG_3266.jpeg"
   }
 ];
