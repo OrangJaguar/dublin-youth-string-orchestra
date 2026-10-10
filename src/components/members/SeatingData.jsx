@@ -145,5 +145,17 @@ Before coming to Dublin, Mrs. Hanson spent 5 years in Ashland City Schools, wher
 
 In her spare time, Mrs. Hanson enjoys hiking, exercising, and spending time with her family in the Leelanau Peninsula.`,
     image: "https://media.base44.com/images/public/6a67b552b43b987affe58d78/b5fdb50e8_IMG_3266.jpeg"
+  },
+  {
+    id: 5,
+    name: "Mr. Matthew Baldwin",
+    school: "Eversole Run Middle School",
+    degrees: [
+      "Bachelor of Music Education - Baldwin Wallace University"
+    ],
+    bio: `Mr. Baldwin is the orchestra director at Eversole Run Middle School in Dublin City Schools. He recently earned his Bachelor of Music Education degree from Baldwin Wallace University. Before joining Dublin, Mr. Baldwin was an intern with the New Horizons Orchestra at Baldwin Wallace, where he led numerous large-group rehearsals. Mr. Baldwin has also worked as a sectional coach and conductor for the Baldwin Wallace Summer String Camps.
+
+Mr. Baldwin is also an active performer. He has participated in summer festivals as a violist in chamber and orchestral settings and was a finalist for the Baldwin Wallace Lauria Concerto competition. Mr. Baldwin currently performs with the New Albany Symphony Orchestra. Mr. Baldwin strives to keep the classroom a safe space for all students and to foster a love for music in all.`,
+    image: "https://media.base44.com/images/public/6a67b552b43b987affe58d78/120db4ee4_ERMSOrchestraHandbook1.png"
   }
 ];
